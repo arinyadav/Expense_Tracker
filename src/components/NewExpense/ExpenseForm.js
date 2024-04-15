@@ -17,9 +17,9 @@ const ExpenseForm = () => {
             <label>Date</label>
             <input type = "date" />
             </div>
-            </div>
             <div className='new-expense__actions'>
-                <button type="submit">Add Expense</button>
+                <button type="submit" className='btn'>Add Expense</button>
+            </div>
             </div>
         </form>
     );

@@ -1,22 +1,21 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import "./ExpenseItem.css";
-import ExpenseDate from './ExpenseDate';
-import Card from '../UI/Card';
+import ExpenseDate from "./ExpenseDate";
+import Card from "../UI/Card";
 
-const ExpenseItem = (props) => { 
-
+const ExpenseItem = (props) => {
   //we can handle button/event by below method also
   //document.getElementById().addEventListener()
-  
+
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.date}/>
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
+    <div className="expense-item">
+      <div>
+        <ExpenseDate date={props.date} />
       </div>
-       </Card>
+      <div className="expense-title">{props.title}</div>
+      <div className="expense-item__price">${props.amount}</div>
+    </div>
   );
-}
+};
 
 export default ExpenseItem;
