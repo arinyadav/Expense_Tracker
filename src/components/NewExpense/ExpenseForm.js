@@ -1,21 +1,48 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ExpenseForm.css';
 
+//use state is used to store value
 const ExpenseForm = () => {
+
+    const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredDate, setEnteredDate] = useState('');
+
+    const titleChangeHandler = (event) => {
+        setEnteredTitle(event.target.value);
+    };
+    const amountChangeHandler = (event) => {
+        setEnteredAmount(event.target.value);
+    };
+    const dateChangeHandler = (event) => {
+        setEnteredDate(event.target.value);
+    };
+
+    const submitHandler = (event) => {
+        //to prevent refreshing after submitting from form
+        event.preventDefault();
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate),
+        }
+        
+    };
+
     return(
-        <form>
+        <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
             <div className="new-expense__control">
             <label>Title</label>
-            <input type = "text"/>
+            <input type = "text" onChange={titleChangeHandler}/>
             </div>
             <div className="new-expense__control">
             <label>Amount</label>
-            <input type = "number" min="0.01" steps="0.01"/>
+            <input type = "number" min="0.01" steps="0.01" onChange={amountChangeHandler}/>
             </div>
             <div className="new-expense__control">
             <label>Date</label>
-            <input type = "date" />
+            <input type = "date" onChange={dateChangeHandler}/>
             </div>
             <div className='new-expense__actions'>
                 <button type="submit" className='btn'>Add Expense</button>
