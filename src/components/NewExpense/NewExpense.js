@@ -3,9 +3,13 @@ import './NewExpense.css'
 import ExpenseForm from './ExpenseForm';
 
 const NewExpense = () => {
+
+    const saveExpenseDataHandler = (enteredExpenseData) => {
+    
+    };
 return (
     <div claassName = 'new-expense'>
-        <ExpenseForm></ExpenseForm>
+        <ExpenseForm onSaveExpenseata={saveExpenseDataHandler} />
     </div>
 );
 }
