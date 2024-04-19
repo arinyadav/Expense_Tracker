@@ -6,6 +6,13 @@ import Card from '../UI/Card';
 const Expenses = (props) => {
 return(
    <div className='expenses'>
+      {
+         props.item.map(
+            expense => {
+               
+            }
+         )
+      }
      <ExpenseItem 
     date = {props.item[0].date} 
     title={props.item[0].title} 
