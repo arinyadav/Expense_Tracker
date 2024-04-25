@@ -21,13 +21,14 @@ const ExpenseForm = (props) => {
     const submitHandler = (event) => {
         //to prevent refreshing after submitting from form
         event.preventDefault();
+
         const expenseData = {
             title: enteredTitle,
             amount: enteredAmount,
             date: new Date(enteredDate),
         }
 
-        props.onSaveExpensedata();
+        props.onSaveExpenseData(expenseData);
 
         console.log(expenseData);
         //this is a type of two way binding
